@@ -99,15 +99,13 @@ var (
 			"-mfpu=vfpv4-d32",
 		},
 		"armv7-a-neon": []string{
+			"-march=armv7-a",
 			"-mfloat-abi=softfp",
 			"-mfpu=neon",
 		},
 	}
 
 	armCpuVariantCflags = map[string][]string{
-		"": []string{
-			"-march=armv7-a",
-		},
 		"cortex-a7": []string{
 			"-mcpu=cortex-a7",
 			"-mfpu=neon-vfpv4",
