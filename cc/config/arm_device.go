@@ -51,8 +51,6 @@ var (
 		"-fgcse-after-reload",
 		"-frerun-cse-after-loop",
 		"-frename-registers",
-		"-fomit-frame-pointer",
-		"-mcpu=cortex-a15 --param l1-cache-line-size=64 --param l1-cache-size=32 --param l2-cache-size=512",
 	}
 
 	armCppflags = []string{
