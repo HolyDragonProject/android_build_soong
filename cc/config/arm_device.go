@@ -40,6 +40,7 @@ var (
 		"-fno-short-enums",
 		"-no-canonical-prefixes",
 		"-fno-canonical-system-headers",
+
 		"-fno-builtin-sin",
 		"-fno-strict-volatile-bitfields",
 
@@ -50,8 +51,6 @@ var (
 		"-fgcse-after-reload",
 		"-frerun-cse-after-loop",
 		"-frename-registers",
-		"-mcpu=cortex-a15 --param l1-cache-line-size=64 --param l1-cache-size=32 --param l2-cache-size=512",
-		"-mfpu=neon-fp-armv8",
 	}
 
 	armCppflags = []string{
@@ -74,7 +73,10 @@ var (
 		"-O2",
 		"-fomit-frame-pointer",
 		"-fstrict-aliasing",
+		"-ftree-vectorize",
+		"-fno-guess-branch-probability",
 		"-funswitch-loops",
+		"-fno-gcse",
 	}
 
 	armThumbCflags = []string{
@@ -82,6 +84,9 @@ var (
 		"-O2",
 		"-fomit-frame-pointer",
 		"-fno-strict-aliasing",
+		"-ftree-vectorize",
+		"-fno-guess-branch-probability",
+		"-fno-gcse",
 	}
 
 	armArchVariantCflags = map[string][]string{
@@ -101,7 +106,7 @@ var (
 		"armv7-a-neon": []string{
 			"-march=armv7-a",
 			"-mfloat-abi=softfp",
-			"-mfpu=neon",
+			"-mfpu=neon-fp-armv8",
 		},
 		"armv8-a": []string{
 			"-march=armv8-a",
@@ -151,7 +156,7 @@ var (
 			"-D__ARM_FEATURE_LPAE=1",
 		},
 		"kryo": []string{
-			"-mcpu=cortex-a53",
+			"-mcpu=cortex-a57",
 			"-mfpu=neon-fp-armv8",
 			// Fake an ARM compiler flag as these processors support LPAE which GCC/clang
 			// don't advertise.
@@ -195,7 +200,7 @@ func init() {
 	// Krait and Kryo targets are not supported by GCC, but are supported by Clang,
 	// so override the definitions when building modules with Clang.
 	replaceFirst(armClangCpuVariantCflags["krait"], "-mcpu=cortex-a15", "-mcpu=krait")
-	replaceFirst(armClangCpuVariantCflags["kryo"], "-mcpu=cortex-a53", "-mcpu=cortex-a53")
+	replaceFirst(armClangCpuVariantCflags["kryo"], "-mcpu=cortex-a57", "-mcpu=cortex-a57")
 
 	// The reason we use "-march=armv8-a+crc", instead of "-march=armv8-a", for
 	// gcc is the latter would conflict with any specified/supported -mcpu!
