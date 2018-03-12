@@ -73,7 +73,6 @@ var (
 		"-O2",
 		"-fomit-frame-pointer",
 		"-fstrict-aliasing",
-		"-ftree-vectorize",
 		"-fno-guess-branch-probability",
 		"-funswitch-loops",
 		"-fno-gcse",
@@ -84,7 +83,6 @@ var (
 		"-O2",
 		"-fomit-frame-pointer",
 		"-fno-strict-aliasing",
-		"-ftree-vectorize",
 		"-fno-guess-branch-probability",
 		"-fno-gcse",
 	}
