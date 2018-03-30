@@ -96,6 +96,7 @@ func installClean(ctx Context, config Config, what int) {
 		hostOut("vts"),
 		productOut("*.img"),
 		productOut("*.zip"),
+		productOut("*.zip.md5sum"),
 		productOut("android-info.txt"),
 		productOut("kernel"),
 		productOut("data"),
@@ -115,7 +116,8 @@ func installClean(ctx Context, config Config, what int) {
 		productOut("installer"),
 		productOut("odm"),
 		productOut("sysloader"),
-		productOut("testcases"))
+		productOut("testcases"),
+		productOut("Changelog.txt"))
 }
 
 // Since products and build variants (unfortunately) shared the same
