@@ -63,8 +63,6 @@ var (
 		"-Wl,--fatal-warnings",
 		"-Wl,-maarch64linux",
 		"-Wl,--hash-style=gnu",
-		"-Wl,--fix-cortex-a53-843419",
-		"-Wl,--fix-cortex-a53-835769",
 		"-fuse-ld=gold",
 		"-Wl,--icf=safe",
 		"-Wl,--no-undefined-version",
