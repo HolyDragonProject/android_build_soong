@@ -48,6 +48,8 @@ var (
 		"-fsched-pressure",
 		"-fsched-spec-load",
 		"-fpredictive-commoning",
+		"-ftree-partial-pre",
+		"-fivopts",
 
 		// COMMON_RELEASE_CFLAGS
 		"-DNDEBUG",
