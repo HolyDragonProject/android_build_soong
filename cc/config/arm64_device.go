@@ -49,7 +49,6 @@ var (
 		"-DNDEBUG",
 		"-O2",
 		"-g0",
-		"-mcpu=cortex-a53+crc+crypto+fp+simd --param l1-cache-line-size=64 --param l1-cache-size=32 --param l2-cache-size=512",
 		"-Wstrict-aliasing=2",
 		"-frename-registers",
 	}
@@ -78,7 +77,7 @@ var (
 			"-mcpu=cortex-a53",
 		},
 		"kryo": []string{
-			// Use the cortex-a57 cpu since some compilers
+			// Use the cortex-a53 cpu since some compilers
 			// don't support a Kryo specific target yet.
 			"-mcpu=cortex-a53",
 		},
