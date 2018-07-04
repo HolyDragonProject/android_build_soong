@@ -44,6 +44,7 @@ var (
 		"-falign-loops=1",
 		"-falign-labels=1",
 		"-falign-jumps=1",
+		"-fno-inline-small-functions",
 		"-fira-loop-pressure",
 		"-fsched-pressure",
 		"-fsched-spec-load",

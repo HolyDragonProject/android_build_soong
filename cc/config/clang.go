@@ -38,6 +38,7 @@ var ClangUnknownCflags = sorted([]string{
 	"-falign-loops=1",
 	"-falign-functions=1",
 	"-falign-jumps=1",
+	"-fno-inline-small-functions",
 	"-fno-guess-branch-probability",
 	"-fno-gcse",
 	"-fira-hoist-pressure",
